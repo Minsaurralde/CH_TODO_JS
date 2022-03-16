@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="to-do">
+    <meta name="keywords" content="tareas, tablero, kanban, organizador, planner, gantt">
+
+    <link rel="shortcut icon" href="favicon.jpg">
+
+    <!-- vinculo con fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- vinculo stylos propios -->
+    <link rel="stylesheet" href="css/todo.css">
+
+    <title>V-Board | to-do</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="contenedor-logo">
+              <a href="todo.html"><img src="img/vb_logo.jpg" alt="logotipo"></a>
+              <span>Vboard</span>  
+            </div>
+            <!-- menu -->
+            <ul class="contenedor-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- widget Clima (API) -->
+    <div class="w-contenedor">
+        <div class="title-tab">
+            <h3>Bienvenido/a <span id="storage_userLog"></span>!</h3>
+        </div>
+        <div class="w-ventana">
+            <form class="w-buscador" id="w-buscador">
+                <input type="text" id="w-ciudad" placeholder="Cambiar ubicacion...">
+                <button type="submit" id="w-submit"></button>
+            </form>
+            <div class="w-temperatura" id="w-temperatura">
+                <div id="w-img">
+                    <img src="http://openweathermap.org/img/wn/03d@2x.png">
+                </div>
+                <div class="w-celsius" id="w-celsius">32°C</div>
+            </div>
+            <div class="w-description" id="w-description">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Buenos Aires - Cielo claro</span>
+                <div id="w-update">Updated: 21/11/21 14:30hs</div>
+            </div>            
+        </div>              
+    </div>
+
+    <!-- Tablero Virtual -->
+    <div class="contenedor-tab">
+
+        <div class="tablero"> 
+            <div class="bloque-tab" id="todo" ondrop="soltar(event)" ondragover="aceptaMover(event)">
+                <h3>To-do</h3>
+                <div class="contenedor-btn">
+                    <button type="button" id="btn_add" onclick="crearTarea()">+ Agregar tarea</button>
+                </div>
+            </div>
+            <div class="bloque-tab" id="encurso" ondrop="soltar(event)" ondragover="aceptaMover(event)">
+                <h3>InProgress</h3>
+            </div>
+            <div class="bloque-tab" id="hecho" ondrop="soltar(event)" ondragover="aceptaMover(event)">
+                <h3>Done!</h3>
+            </div>           
+        </div>
+    </div>
+
+    <!-- Formulario oculto para crear tareas (modal) -->
+    <div class="contenedor-modal" id="contenedor-modal">
+        <form class="form-nueva-tarea" id="form-nueva-tarea">
+            <h3 class="relative">Datos Tarea<i class="far fa-times-circle" id="close_modal"></i></h3>
+            <div class="form-row">
+                <label class="form-label" for="task-name">Task</label>
+                <input class="form-input" type="text" name="task-name" id="task-name" required>
+            </div>
+            <div class="form-row">
+                <label class="form-label" for="task-description">Description (opcional)</label>
+                <textarea class="form-input" name="task-description" id="task-description" cols="70" rows="10"></textarea>
+            </div>
+            <div class="form-row">
+                <label class="form-label" for="task-status">Status</label>
+                <select class="form-input" name="task-status" id="task-status">
+                    <option value="todo">To-do</option>
+                    <option value="encurso">InProgress</option>
+                    <option value="hecho">Done!</option>
+                </select>
+            </div>
+            <div class="form-btn">
+                <button type="button" id="btn_save">Guardar</button>
+                <button type="button" id="btn_edit">Editar</button>
+                <button type="button" id="btn_cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Fin formulario -->
+
+    <!-- vinculo JS propio -->
+    <script src="js/api.js"></script>
+    <script src="js/todo.js"></script>
+</body>
+</html>

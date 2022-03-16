@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- SEO -->
+	<meta name="description" content="loguin V-Board">
+	<meta name="keywords" content="V-Board, tablero, kanban, organizador">
+
+	<link rel="shortcut icon" href="favicon.jpg">
+
+	<!-- vinculo stylos propios -->
+    <link rel="stylesheet" href="css/login.css">
+
+	<title>V-Board | Login</title>
+</head>
+<body>
+	<main>		
+		<div class="contenedor-login">
+
+			<div class="contenedor-gris">
+
+				<div class="caja-login">
+					<h3>Ya tengo cuenta</h3>
+					<p>Inicia tu sesion para entrar en la pagina</p>
+					<button id="btn_formIngreso">Iniciar Sesion</button>
+				</div>
+
+				<div class="caja-registro">
+					<h3>Aún no tengo cuenta</h3>
+					<p>Resgistrarse para poder iniciar sesion</p>
+					<button id="btn_formRegistro">Registrarse</button>
+				</div>
+			</div>
+
+			<div class="contenedor-blanco">
+				
+				<form action="" class="form-login" id="form-login">
+					<h2>Iniciar Sesion</h2>
+					<input type="email" id="email" placeholder="Correo Electronico" required>
+					<input type="password" id="pass" placeholder="Contraseña" required>
+					<p class="error-msg" id="e-sesion">Por favor revisa tus datos e intenta nuevamente!</p>
+					<button type="button" id="btn_entrar">Ingresar</button>
+				</form>
+
+				<form action="" class="form-registro" id="form-registro">
+					<h2>Registrarse</h2>
+					<input type="text" id="newname" placeholder="Nombre" required>
+					<p class="error-msg validacion" id="e-newname">debe tener de 4 a 16 digitos y solo puede contener letras.</p>
+					<input type="email" id="newemail" placeholder="Correo Electronico" required>
+					<p class="error-msg validacion" id="e-newemail">debe contener @ y solo puede tener letras, numeros, puntos, guiones.</p>
+					<input type="password" id="newpass" placeholder="Contraseña" required>
+					<p class="error-msg validacion" id="e-newpass">debe tener de 5 a 12 caracteres.</p>
+					<button type="button" id="btn_registro">Registrarse</button>
+					<p class="exito-msg subBtn">Te registraste con exito!</p>
+					<p class="error-msg subBtn">Revisa los errores por favor!</p>
+					<p class="error-mail subBtn">El mail ya existe, intente con otro!</p>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

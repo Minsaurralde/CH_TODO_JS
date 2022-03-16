@@ -1,0 +1,320 @@
+/*reset stylos*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/*estilos nav*/
+.navbar {
+  background-color: rgba(34, 35, 29, 1.0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 1px;
+}
+
+.contenedor-logo {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.contenedor-logo img {
+  width: 50px;
+}
+.contenedor-logo span {
+  font-weight: 400;
+  font-size: 26px;
+  color: whitesmoke;
+  margin-left: 10px;
+}
+
+.contenedor-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-link {
+  color: whitesmoke;
+  margin: 0 10px;
+}
+
+/*estilos generales*/
+
+body {
+  background-image: url(../img/otono.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.capital{
+  text-transform: capitalize;
+}
+
+.contenedor-tab {
+  width: 100%;
+  min-width: 50%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(34, 35, 29, 0.8);
+}
+
+.tablero {
+  width: 90%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bloque-tab,
+.form-nueva-tarea {
+  margin: 0 auto;
+  padding: 0.6rem;
+  width: 30.5%;
+  min-width: 14rem;
+  height: 350px;
+  border-radius: 0.3rem;
+  overflow: auto;
+}
+
+#todo {
+  background-color: rgba(250, 197, 188, 1.0);
+}
+
+#encurso {
+  background-color: rgba(230, 230, 90, 1.0);
+  /* display: none; */
+}
+
+#hecho {
+  background-color: rgba(20, 180, 50, 1.0);
+  /* display: none; */
+}
+
+.task {
+  background-color: whitesmoke;
+  margin: 0.2rem 0rem 0.3rem 0rem;
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.2rem 0.5rem 2rem;
+}
+
+#btn_add {
+  margin: 0.2rem 0rem 0.1rem 0rem;
+  background-color: whitesmoke;
+  border-radius: 0.2rem;
+  width: 100%;
+  border: 0.25rem solid black;
+  padding: 0.5rem 2.7rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*estilos modal*/
+
+.contenedor-modal{
+  display: none;
+/*  display: flex;*/
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+}
+
+/*estilos en formularios*/
+
+.form-nueva-tarea {
+  display: flex; 
+  background: #ffaf00;
+  width: 64.4%;
+  max-width: 600px;
+  flex-direction: column;
+}
+
+.relative{
+  position: relative;
+}
+.w-100{
+  width: 100%;
+}
+
+.fa-times-circle{
+ position: absolute;
+ right: 0.2rem;
+ cursor: pointer;
+}
+.fa-edit{
+ position: absolute;
+ right: 1.5rem;
+ cursor: pointer;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0.2rem;
+}
+
+.form-label {
+  width: 15%;
+  padding: 0.2rem;
+  padding-right: 0.5rem;
+  border: 0.1rem solid black;
+  border-right: 0;
+  border-radius: 0.2rem 0rem 0rem 0.2rem;
+}
+
+.form-input {
+  border: 0.1rem solid black;
+  border-radius: 0rem 0.2rem 0.2rem 0rem;
+  width: 85%;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.2rem;
+}
+
+#btn_edit,
+#btn_save,
+#btn_cancel {
+  margin: 0.2rem 0rem 0.1rem 0rem;
+  background-color: white;
+  border-radius: 0.2rem;
+  width: 49.2%;
+  border: 0.25rem solid black;
+  padding: 0.5rem 2.7rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btn_edit {
+  display: none;
+}
+
+/*estilos API clima*/
+.w-contenedor{
+  height: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-tab h3 {
+  font-weight: 400;
+  font-size: 26px;
+  color: whitesmoke;
+  background-color: rgba(34, 35, 29, 0.8);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.8rem 1.7rem;
+}
+
+.w-ventana{
+  width: 250px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.w-buscador{
+  z-index: 1000;
+  margin: 0.5rem;
+}
+.w-buscador input{
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+.w-buscador input:focus{
+  outline: none;
+}
+.w-buscador #w-submit{
+  visibility: hidden;
+}
+
+.w-temperatura{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.w-temperatura img{
+  position: absolute;
+  top: 5%;
+}
+.w-description{
+  font-size: 12px;
+  color: whitesmoke;
+  position: absolute;
+  bottom: 5%;
+}
+.w-celsius{
+  font-size: 30px;
+  font-weight: 400;
+  color: whitesmoke;
+}
+
+/*responsive para mobile*/
+@media (max-width: 850px) {
+  .tablero{
+    flex-direction: column;
+  }
+  .bloque-tab,
+  .form-nueva-tarea{
+    width: 100%;
+    max-width: 400px;
+  }
+  .title-tab h3 {
+    margin: 0.2rem;
+    padding: 0.8rem 0.5rem;
+  }
+  .w-ventana{
+    width: 150px;
+  }
+  .w-temperatura img{
+    left: 1%;
+    width: 90px;
+  }
+  .w-celsius{
+  font-size: 20px;
+  font-weight: 400;
+  color: whitesmoke;
+  }
+  #w-ciudad{
+  width: 145px;
+  }
+}
